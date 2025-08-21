@@ -1,0 +1,64 @@
+/* レスポンシブレイアウトの基礎 */
+:root {
+    color-scheme: light dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* スクロールバーを非表示 */
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica, Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    touch-action: manipulation;
+    /* タッチ操作の最適化 */
+}
+
+.container {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    /* 余白を削除してフルスクリーン */
+}
+
+#stateImage {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* 画面全体をカバー */
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    transition: filter 0.1s ease;
+    /* 視覚的フィードバック */
+}
+
+/* アクティブ状態のフィードバック */
+#stateImage:active {
+    filter: brightness(0.9);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    body {
+        -webkit-touch-callout: none;
+        /* iOS Safari でのタッチメニュー無効化 */
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* 横向き対応 */
+@media (orientation: landscape) {
+    #stateImage {
+        object-position: center;
+    }
+}

@@ -1,0 +1,41 @@
+/* レイアウトの基礎 */
+:root {
+    color-scheme: light dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica, Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.container {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+#stateImage {
+    max-width: min(90vw, 720px);
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.hint {
+    opacity: .7;
+    font-size: 0.9rem;
+}
